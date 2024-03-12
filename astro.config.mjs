@@ -1,7 +1,7 @@
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 import cloudflare from "@astrojs/cloudflare";
-import { remarkDiagram } from "./remark-diagram.mjs"
+import { remarkDiagram } from "./remark-diagram.mjs";
 
 export default defineConfig({
   output: "server",
@@ -29,8 +29,16 @@ export default defineConfig({
           autogenerate: { directory: "guides" },
         },
         {
-          label: "Usecases",
-          autogenerate: { directory: "usecases" },
+          label: "Usecases - Title",
+          autogenerate: { directory: "usecases/title" },
+        },
+        {
+          label: "Usecases - Cruise",
+          autogenerate: { directory: "usecases/cruise" },
+        },
+        {
+          label: "Usecases - Match",
+          autogenerate: { directory: "usecases/match" },
         },
         {
           label: "Domain",
