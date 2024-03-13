@@ -28,12 +28,16 @@ classDiagram
     class User{
       - int id
     }
+    class Fighter{
+      - int id
+      - string name
+    }
     class Entry{
       - int id
       - int userId
       - int teamId
       - int seasonId
-      - int charaCode
+      - int fighterId
     }
     class Raid{
       - int id
@@ -69,4 +73,5 @@ classDiagram
     Raid "1" *-- "1" RaidSituation
     Raid "1" *-- "1" RaidPoint
     Raid "1" *-- "0..7" RaidButtle
+    Entry "1" o-- "8" Fighter
 ```
