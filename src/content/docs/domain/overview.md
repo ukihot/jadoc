@@ -1,7 +1,9 @@
 ---
-title: Example Reference
+title: Overview
 description: A reference page in my new Jad docs site.
 ---
+
+データの起点はレイドであり、プレイヤーではない。
 
 ```mermaid
 ---
@@ -9,53 +11,34 @@ title: K Modeling
 ---
 classDiagram
     direction LR
-    class Tournament{
+    class Season{
       - int id
       - string title
       - date eventOn
       - string format
-      - string sex
-      + saveTournament()
-      + removeTournament()
     }
     class Match{
       - int id
       - int winnerId
       - int loserId
-      - int atTournamentId
-      - int round
+      - int seasonId
       - int winnerScore
       - int loserScore
-      + saveMatch()
-      + removeMatch()
     }
-    class Team{
+    class User{
       - int id
-      - string name
-      + saveTeam()
-    }
-    class Player{
-      - int id
-      - string givenName
-      - string familyName
-      - string middleName
-      - string nickName
-      - string sex
-      - date birthDate
-      + savePlayer()
     }
     class Entry{
       - int id
-      - int playerId
+      - int userId
       - int teamId
-      - int TournamentId
-      - int height
-      - int weight
+      - int seasonId
+      - int charaCode
     }
     class Raid{
       - int id
-      - int cycle
-      - int atMatchId
+      - int innings
+      - int matchId
       - int raiderId
       - bool isSuccess
     }
@@ -74,18 +57,16 @@ classDiagram
     }
     class RaidButtle{
       - int raidId
-      - int outPlayerId?
-      - int inPlayerId?
+      - int outUserId?
+      - int inUserId?
     }
 
-    Tournament "1" *-- "1..n" Match
-    Tournament "1" *-- "1..n" Entry
-    Entry "1" o-- "1" Team
-    Team "2" -- "1..n" Match
-    Player "1" --o "1" Entry
+    Season "1" *-- "1..n" Match
+    Season "1" *-- "1..n" Entry
     Match "1" *-- "1..n" Raid
-    RaidButtle "0..7" --* "1" Raid
+    Entry "1" o-- "8" User
+    RaidButtle "1..n" o-- "1..2" User
     Raid "1" *-- "1" RaidSituation
     Raid "1" *-- "1" RaidPoint
-    Entry -- RaidButtle
+    Raid "1" *-- "0..7" RaidButtle
 ```
