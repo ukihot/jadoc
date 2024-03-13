@@ -3,7 +3,8 @@ title: Overview
 description: A reference page in my new Jad docs site.
 ---
 
-データの起点はレイドであり、プレイヤーではない。
+原則，すべてのデータは`Season`に帰属する。
+ただし，ユーザ情報とファイター情報は独立して存在する。
 
 ```mermaid
 ---

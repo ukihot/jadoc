@@ -29,6 +29,14 @@ export default defineConfig({
           autogenerate: { directory: "guides" },
         },
         {
+          label: "Fighters",
+          autogenerate: { directory: "presentation/fighters" },
+        },
+        {
+          label: "Stages",
+          autogenerate: { directory: "presentation/stages" },
+        },
+        {
           label: "Usecases - Title",
           autogenerate: { directory: "usecases/title" },
         },
