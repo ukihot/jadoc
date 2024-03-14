@@ -37,6 +37,10 @@ export default defineConfig({
           autogenerate: { directory: "presentation/stages" },
         },
         {
+          label: "Development",
+          autogenerate: { directory: "infra" },
+        },
+        {
           label: "Usecases - Title",
           autogenerate: { directory: "usecases/title" },
         },
